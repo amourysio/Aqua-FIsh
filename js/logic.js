@@ -27,8 +27,8 @@ const motion = (fish, top, left, speed) => {
     });
 }
 $(window).ready(() => {
-    window.onresize = swim;
     for (i = 0; i < setRandom(4, 7); i++) {
+        window.onresize = swim(fish[i]);
         fish[i] = `<img id='fish${i}' src="images/fish1.png">` // Append in fish Array
         $("body").append(fish[i]); // Append in html index page
         swim(`fish${i}`); // using appended fish element to function
